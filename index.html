@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Trello Sheets Sync Power-Up</title>
+    <script src="https://p.trellocdn.com/power-up.min.js"></script>
+</head>
+<body>
+    <script>
+        // Minimal Trello Power-Up for API access
+        // This is just to satisfy the Power-Up requirement for API keys
+        window.TrelloPowerUp.initialize({
+            // Minimal capability - we mainly just need API access
+            'show-settings': function(t, options) {
+                return t.popup({
+                    title: 'Sheets Sync Settings',
+                    url: './settings.html',
+                    height: 184
+                });
+            }
+        });
+    </script>
+</body>
+</html>
