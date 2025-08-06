@@ -4,21 +4,75 @@
     <meta charset="UTF-8">
     <title>Trello Sheets Sync Power-Up</title>
     <script src="https://p.trellocdn.com/power-up.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f4f5f7;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status {
+            display: inline-block;
+            background: #61bd4f;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        h1 {
+            color: #172b4d;
+            margin-top: 0;
+        }
+        .note {
+            background: #dfe1e6;
+            padding: 15px;
+            border-radius: 3px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <span class="status">✓ ACTIVE</span>
+        <h1>Trello Sheets Sync Power-Up</h1>
+        <p>This Power-Up is running correctly and ready to provide API access for your Trello to Google Sheets automation.</p>
+        
+        <h3>What this does:</h3>
+        <ul>
+            <li>Enables API key generation for Trello access</li>
+            <li>Works with Google Apps Script for automated syncing</li>
+            <li>Syncs cards from specified Trello lists to Google Sheets</li>
+        </ul>
+        
+        <div class="note">
+            <strong>For developers:</strong> This page serves as the iframe connector for the Trello Power-Up. The actual sync functionality is handled by your Google Apps Script automation.
+        </div>
+    </div>
+
     <script>
-        // Minimal Trello Power-Up for API access
-        // This is just to satisfy the Power-Up requirement for API keys
-        window.TrelloPowerUp.initialize({
-            // Minimal capability - we mainly just need API access
-            'show-settings': function(t, options) {
-                return t.popup({
-                    title: 'Sheets Sync Settings',
-                    url: './settings.html',
-                    height: 184
-                });
-            }
-        });
+        // Trello Power-Up initialization
+        // This runs when loaded within Trello's iframe context
+        if (window.TrelloPowerUp) {
+            window.TrelloPowerUp.initialize({
+                // Minimal capability - we mainly just need API access
+                'show-settings': function(t, options) {
+                    return t.popup({
+                        title: 'Sheets Sync Settings',
+                        url: './settings.html',
+                        height: 184
+                    });
+                }
+            });
+        }
     </script>
 </body>
 </html>
