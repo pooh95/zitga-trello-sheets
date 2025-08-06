@@ -1,0 +1,16 @@
+{
+  "name": "Trello Sheets Sync",
+  "details": "Sync Trello cards to Google Sheets automatically",
+  "author": "Your Name",
+  "capabilities": [
+    "show-settings"
+  ],
+  "connectors": {
+    "iframe": {
+      "url": "https://yourusername.github.io/trello-sheets-powerup/index.html"
+    }
+  },
+  "icon": {
+    "url": "https://cdn-icons-png.flaticon.com/512/888/888874.png"
+  }
+}
